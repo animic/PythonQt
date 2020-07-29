@@ -326,6 +326,8 @@ target_link_libraries(PythonQt
 # Install library (on windows, put the dll in 'bin' and the archive in 'lib')
 
 install(TARGETS PythonQt
+        EXPORT PythonQt-targets
+        PUBLIC_HEADER DESTINATION include
         RUNTIME DESTINATION ${PythonQt_INSTALL_RUNTIME_DIR}
         LIBRARY DESTINATION ${PythonQt_INSTALL_LIBRARY_DIR}
         ARCHIVE DESTINATION ${PythonQt_INSTALL_ARCHIVE_DIR})
@@ -376,3 +378,6 @@ if(BUILD_TESTING)
     )
 endif()
 
+install(EXPORT PythonQt-targets
+    FILE PythonQt-config.cmake
+    DESTINATION lib/cmake/PythonQt)

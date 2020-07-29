@@ -380,4 +380,4 @@ endif()
 
 install(EXPORT PythonQt-targets
     FILE PythonQt-config.cmake
-    DESTINATION lib/cmake/PythonQt)
+    DESTINATION lib/cmake)
